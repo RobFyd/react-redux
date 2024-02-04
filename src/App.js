@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
   return (
@@ -17,6 +17,8 @@ function App() {
         >
           Learn React
         </a>
+        <p>Przykładowy kod w języku JavaScript:</p>
+        <code>console.log("Witaj świecie!");</code>
       </header>
     </div>
   );
