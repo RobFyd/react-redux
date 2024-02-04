@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { configureStore } from "@reduxjs/toolkit";
 
 const initialState = {
-  tasks: [],
+  tasks: [{ content: "Task 1" }, { content: "Task 2" }],
 };
 
 const taskReducer = (state = initialState, action) => {
@@ -28,6 +28,18 @@ const taskReducer = (state = initialState, action) => {
 };
 
 const store = configureStore({ reducer: taskReducer });
+console.log(store.getState());
+
+store.dispatch({
+  type: "addTask",
+  payload: "Task 3",
+});
+console.log(store.getState());
+
+store.dispatch({
+  type: "addTask",
+  payload: "Task 4",
+});
 console.log(store.getState());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
