@@ -32,6 +32,9 @@ const addTask = (content) => ({
   payload: content,
 });
 
+//selector - function that takes the state and returns a part of it
+const selectTasks = (state) => state.tasks;
+
 const store = configureStore({ reducer: taskReducer });
 console.log(store.getState());
 
@@ -40,6 +43,9 @@ console.log(store.getState());
 
 store.dispatch(addTask("Task 4"));
 console.log(store.getState());
+
+store.dispatch(addTask("Task 5"));
+console.log(selectTasks(store.getState()));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
