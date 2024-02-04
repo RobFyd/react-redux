@@ -27,19 +27,18 @@ const taskReducer = (state = initialState, action) => {
   }
 };
 
+const addTask = (content) => ({
+  type: "addTask",
+  payload: content,
+});
+
 const store = configureStore({ reducer: taskReducer });
 console.log(store.getState());
 
-store.dispatch({
-  type: "addTask",
-  payload: "Task 3",
-});
+store.dispatch(addTask("Task 3"));
 console.log(store.getState());
 
-store.dispatch({
-  type: "addTask",
-  payload: "Task 4",
-});
+store.dispatch(addTask("Task 4"));
 console.log(store.getState());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
